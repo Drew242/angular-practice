@@ -6,13 +6,13 @@
   </head>
 
     <body>
-      <div class="text-center">
+      <div class="title text-center">
         <h1 id="title">{{"hello " + "angular"}}</h1></br>
       </div>
 
       <div ng-controller="StoreController as store" class="text-center">
         <div ng-repeat="product in store.products">
-          <div ng-hide="product.soldOut">
+          <div class="product col-md-4" ng-hide="product.soldOut">
             <h1>{{product.name}}</h1>
             <h2>${{product.price}}</h2>
             <p>"{{product.description}}"</p>

@@ -1,3 +1,12 @@
+.title{
+  background: #000099;
+}
 #title {
-  color: #000099;
+  color: #F6F614;
+}
+.product{
+  background: #000000;
+  color: #999999;
+  margin: 5px;
+  max-width: 300px;
 }
