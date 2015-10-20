@@ -9,4 +9,24 @@
   color: #999999;
   margin: 5px;
   max-width: 300px;
+  height: 600px;
+}
+.picture {
+  padding-top: 5px;
+}
+.bottom-button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.panel-box{
+  max-height: 150px;
+  overflow: scroll;
+}
+.panel {
+  margin-top: 20px;
+  height: 100px;
+  overflow: scroll;
+  background: #999999;
+  color: #000000;
 }

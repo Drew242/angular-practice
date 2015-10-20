@@ -13,10 +13,40 @@
       <div ng-controller="StoreController as store" class="text-center">
         <div ng-repeat="product in store.products">
           <div class="product col-md-4" ng-hide="product.soldOut">
-            <h1>{{product.name}}</h1>
-            <h2>${{product.price}}</h2>
-            <p>"{{product.description}}"</p>
-            <button class="btn-success" ng-show="product.canPurchase">Add to Cart</button>
+            <img class="picture" ng-src="{{product.image}}"/>
+              <h1>{{product.name}}</h1>
+                <section ng-controller="PanelController as panel">
+                  <ul class="nav nav-pills">
+                    <li ng-class="{ active:panel.isSelected(1) }">
+                      <a href ng-click="panel.selectTab(1)">Description</a>
+                    </li>
+                    <li ng-class="{ active:panel.isSelected(2) }">
+                      <a href ng-click="panel.selectTab(2)">Reviews</a>
+                    </li>
+                    <li ng-class="{ active:panel.isSelected(3) }">
+                      <a href ng-click="panel.selectTab(3)">Price</a>
+                    </li>
+                  </ul>
+                <div class="panel-box">
+                  <div class="panel" ng-show="panel.isSelected(1)">
+                    <h6>Description</h6>
+                      <p>{{product.description}}</p>
+                  </div>
+                </div>
+                <div class="panel-box">
+                  <div class="panel" ng-repeat="review in product.reviews" ng-show="panel.isSelected(2)">
+                    <h6>Reviews</h6>
+                      <p>{{review}}</p>
+                  </div>
+                </div>
+                <div class="panel-box">
+                  <div class="panel" ng-show="panel.isSelected(3)">
+                    <h6>Price</h6>
+                      <p>{{product.price | currency }}</p>
+                  </div>
+                </div>
+              </section>
+            <button class="bottom-button btn-success" ng-show="product.canPurchase">Add to Cart</button>
           </div>
         </div>
       </div>
